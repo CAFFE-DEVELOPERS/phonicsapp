@@ -37,7 +37,7 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 	{
 
 	public static int CAMERA_WIDTH, CAMERA_HEIGHT;
-	public Camera mCamera;
+	public static Camera mCamera;
 	public static Scene mScene;
 	public static Scene menuScene;
 	public static VertexBufferObjectManager vertexBufferObjectManager;
@@ -189,15 +189,14 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 	public static TiledTextureRegion mAnimatedSplashTextureRegion;
 	public AnimatedSprite animatedSplash;
 
-	
 	@Override
 	public EngineOptions onCreateEngineOptions()
 	{
 		// TODO Auto-generated method stub
 		MainActivityInstace = this;
 		Display display = getWindowManager().getDefaultDisplay();
-		CAMERA_HEIGHT = display.getHeight();
-		CAMERA_WIDTH = display.getWidth();
+		CAMERA_HEIGHT = 454;// display.getHeight();
+		CAMERA_WIDTH = 800;//display.getWidth();
 
 		mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
 

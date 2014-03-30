@@ -19,7 +19,6 @@ public class ScreenShot
 
 	public ScreenShot()
 	{
-		
 		GameActivity.cursor.setVisible(false);
 		//final float time = System.currentTimeMillis();
 		GameActivity.screenCapture.capture(250, 60, GameActivity.viewWidth, GameActivity.viewHeight,FileUtils.getAbsolutePathOnInternalStorage
@@ -62,10 +61,9 @@ public class ScreenShot
 		public setTexture(String address)
 		{ 
 			//this.mDrawnPictureRegion = textureRegion;
-			GameActivity.source = new BitmapTextureAtlasSource(
-					BitmapFactory.decodeFile(address));
+			GameActivity.source = new BitmapTextureAtlasSource(BitmapFactory.decodeFile(address));
 			GameActivity.texture = new BitmapTextureAtlas(GameActivity.MainActivityInstace.getTextureManager(),
-					1000, 1000);
+					GameActivity.viewWidth, GameActivity.viewHeight);
 			GameActivity.texture.addTextureAtlasSource(GameActivity.source, 0, 0);
 			GameActivity.texture.load();
 			GameActivity.textureRegion = (TextureRegion) TextureRegionFactory.createFromSource(

@@ -305,7 +305,7 @@ public class PopUp
 		// If screen shot taken, then show screen shot of drawn image
 		if (GameActivity.changeTexture == 1) 
 		{
-			GameActivity.drawnPicture = new Sprite(-40, -90, GameActivity.textureRegion,
+			GameActivity.drawnPicture = new Sprite(popUpArea.getX()-30, popUpArea.getY()-30, GameActivity.textureRegion,
 					GameActivity.vertexBufferObjectManager);
 			GameActivity.drawnPicture.setScale((float) 0.6);
 			popUpArea.attachChild(GameActivity.drawnPicture);

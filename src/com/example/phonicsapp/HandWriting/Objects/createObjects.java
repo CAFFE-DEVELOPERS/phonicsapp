@@ -679,50 +679,50 @@ public class createObjects
 				//set the animation time
 				AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
 				
-				GameActivity.mScene.registerUpdateHandler(new TimerHandler(5, new ITimerCallback() 
-				{
-					@Override
-					public void onTimePassed(TimerHandler pTimerHandler) 
-					{
-						// TODO Auto-generated method stub
-						//MonkeyTutorial start 
-						MonkeyTutorial.monkeyTutorialstart(2,
-								GameActivity.moOutLineX - 28,
-								GameActivity.moOutLineY - 35,
-								GameActivity.moOutLineX + 202,
-								GameActivity.moOutLineY - 35,
-
-								GameActivity.moOutLineX+75, GameActivity.moOutLineY+25,
-								GameActivity.moOutLineX+43, GameActivity.moOutLineY+52, 
-								GameActivity.moOutLineX+38, GameActivity.moOutLineY+21,
-								GameActivity.moOutLineX+84, GameActivity.moOutLineY+1,
-								GameActivity.moOutLineX+117, GameActivity.moOutLineY+12,
-								GameActivity.moOutLineX+143, GameActivity.moOutLineY+43,
-								GameActivity.moOutLineX+137, GameActivity.moOutLineY+93,
-								GameActivity.moOutLineX+62, GameActivity.moOutLineY+112,
-								GameActivity.moOutLineX+18, GameActivity.moOutLineY+110, 
-								GameActivity.moOutLineX+83, GameActivity.moOutLineY+144, 
-								GameActivity.moOutLineX+144, GameActivity.moOutLineY+182, 
-								GameActivity.moOutLineX+190, GameActivity.moOutLineY+223, 
-								GameActivity.moOutLineX+190, GameActivity.moOutLineY+223, 
-								
-								//no need
-								GameActivity.moOutLineX+142, GameActivity.moOutLineY-48, 
-								GameActivity.moOutLineX+142, GameActivity.moOutLineY+208, 
-								GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
-								GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
-								
-								GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-								GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-								); 
-						
-						// play sound
-						GameActivity.audioPlay = true;
-						NumberSprites.playAudio(R.raw.hw_ho);
-					}
-				}));
+//				GameActivity.mScene.registerUpdateHandler(new TimerHandler(5, new ITimerCallback() 
+//				{
+//					@Override
+//					public void onTimePassed(TimerHandler pTimerHandler) 
+//					{
+//						// TODO Auto-generated method stub
+//						//MonkeyTutorial start 
+//						MonkeyTutorial.monkeyTutorialstart(2,
+//								GameActivity.moOutLineX - 28,
+//								GameActivity.moOutLineY - 35,
+//								GameActivity.moOutLineX + 202,
+//								GameActivity.moOutLineY - 35,
+//
+//								GameActivity.moOutLineX+75, GameActivity.moOutLineY+25,
+//								GameActivity.moOutLineX+43, GameActivity.moOutLineY+52, 
+//								GameActivity.moOutLineX+38, GameActivity.moOutLineY+21,
+//								GameActivity.moOutLineX+84, GameActivity.moOutLineY+1,
+//								GameActivity.moOutLineX+117, GameActivity.moOutLineY+12,
+//								GameActivity.moOutLineX+143, GameActivity.moOutLineY+43,
+//								GameActivity.moOutLineX+137, GameActivity.moOutLineY+93,
+//								GameActivity.moOutLineX+62, GameActivity.moOutLineY+112,
+//								GameActivity.moOutLineX+18, GameActivity.moOutLineY+110, 
+//								GameActivity.moOutLineX+83, GameActivity.moOutLineY+144, 
+//								GameActivity.moOutLineX+144, GameActivity.moOutLineY+182, 
+//								GameActivity.moOutLineX+190, GameActivity.moOutLineY+223, 
+//								GameActivity.moOutLineX+190, GameActivity.moOutLineY+223, 
+//								
+//								//no need
+//								GameActivity.moOutLineX+142, GameActivity.moOutLineY-48, 
+//								GameActivity.moOutLineX+142, GameActivity.moOutLineY+208, 
+//								GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
+//								GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
+//								
+//								GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+//								GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+//								); 
+//						
+//						// play sound
+//						GameActivity.audioPlay = true;
+//						NumberSprites.playAudio(R.raw.hw_ho);
+//					}
+//				}));
 				 	
-//				LetterStructureHo.createNumberSpriteAndCursor(); 
+				LetterStructureHo.createNumberSpriteAndCursor(); 
 		}
 		//Outline of letter Kho
 		else if(GameActivity.letter == 12)
@@ -1432,37 +1432,36 @@ public class createObjects
 				{
 					// TODO Auto-generated method stub
 					//MonkeyTutorial start 
-					MonkeyTutorial.monkeyTutorialstart(4,
-							GameActivity.moOutLineX - 20,
-							GameActivity.moOutLineY - 20,
-							GameActivity.moOutLineX + 220,
-							GameActivity.moOutLineY - 20,
-					
-							//Edit From Here
+					//MonkeyTutorial start 
+					MonkeyTutorial.monkeyTutorialstart(3,
+							GameActivity.moOutLineX +16, 
+							GameActivity.moOutLineY + 2,
+							GameActivity.moOutLineX + 55,
+							GameActivity.moOutLineY + 2,
+
+							GameActivity.moOutLineX+55, GameActivity.moOutLineY+2,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+27,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY-24,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+							GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
 							
-							GameActivity.moOutLineX+58, GameActivity.moOutLineY+31,
-							GameActivity.moOutLineX+50, GameActivity.moOutLineY+57,
-							GameActivity.moOutLineX+30, GameActivity.moOutLineY+46,
-							GameActivity.moOutLineX+41, GameActivity.moOutLineY+20,
+							//no need
+							GameActivity.moOutLineX+92, GameActivity.moOutLineY-2,
+							GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
+							GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
+							GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
 							
-							GameActivity.moOutLineX+73, GameActivity.moOutLineY+18,
-							GameActivity.moOutLineX+107, GameActivity.moOutLineY+51,
-							GameActivity.moOutLineX+100, GameActivity.moOutLineY+119,
-							GameActivity.moOutLineX+54, GameActivity.moOutLineY+134,
-							GameActivity.moOutLineX-8, GameActivity.moOutLineY+99,
-							GameActivity.moOutLineX-38, GameActivity.moOutLineY+13,
-							GameActivity.moOutLineX-38, GameActivity.moOutLineY+13,
-							GameActivity.moOutLineX-38, GameActivity.moOutLineY+13,
-							GameActivity.moOutLineX-38, GameActivity.moOutLineY+13,
-							
-							GameActivity.moOutLineX+104, GameActivity.moOutLineY+110, 
-							GameActivity.moOutLineX+159, GameActivity.moOutLineY+183,
-							GameActivity.moOutLineX+159, GameActivity.moOutLineY-12,
-							GameActivity.moOutLineX+163, GameActivity.moOutLineY-12,
-							
-							GameActivity.moOutLineX+224, GameActivity.moOutLineY-8, 
-							GameActivity.moOutLineX+224, GameActivity.moOutLineY+185
-							);
+							GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+							GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+							); 
 					
 					// play sound
 					GameActivity.audioPlay = true;
@@ -1470,36 +1469,6 @@ public class createObjects
 				}
 			}));
 			
-			//MonkeyTutorial start 
-			MonkeyTutorial.monkeyTutorialstart(3,
-					GameActivity.moOutLineX +16, 
-					GameActivity.moOutLineY + 2,
-					GameActivity.moOutLineX + 55,
-					GameActivity.moOutLineY + 2,
-
-					GameActivity.moOutLineX+55, GameActivity.moOutLineY+2,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+27,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY-24,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-					
-					//no need
-					GameActivity.moOutLineX+92, GameActivity.moOutLineY-2,
-					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
-					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
-					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
-					
-					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-					); 
 			
 //			LetterStructureAakar.createNumberSpriteAndCursor(); 
 			

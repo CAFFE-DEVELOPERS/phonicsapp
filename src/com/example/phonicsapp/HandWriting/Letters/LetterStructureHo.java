@@ -385,6 +385,7 @@ public class LetterStructureHo
 		GameActivity.cursor = new AnimatedSprite(GameActivity.moOutLineX, GameActivity.moOutLineY, 
 				GameActivity.mFishTextureRegion, GameActivity.vertexBufferObjectManager);
 		GameActivity.cursor.animate(new long[]{100, 100, 100, 100, 100, 100}, 0, 5, true);
+		GameActivity.cursor.setScale((float) 0.8);
 		GameActivity.cursor.setZIndex(3);
 		GameActivity.mScene.attachChild(GameActivity.cursor);
 						
