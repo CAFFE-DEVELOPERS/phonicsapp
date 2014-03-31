@@ -19,6 +19,8 @@ import android.content.Intent;
 import android.view.Display;
 
 import com.example.phonicsapp.animatedBook.AnimatedBookActivity;
+import com.example.phonicsapp.boxGame.BoxGameActivity;
+import com.example.phonicsapp.monkeyGame.MonkeyGameActivity;
 
 public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListener
 {
@@ -308,13 +310,13 @@ public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListene
 		if(letterNumber == 1 ||letterNumber == 6|| letterNumber == 4 || letterNumber == 19 )
 		{
 			menuLetters[row][column].setScale((float) 0.55);
-			Intent intent = new Intent(getBaseContext(), AnimatedBookActivity.class);
-			intent.putExtra("val",letterNumber);
-			startActivity(intent);
+//			Intent intent = new Intent(getBaseContext(), AnimatedBookActivity.class);
+//			intent.putExtra("val",letterNumber);
+//			startActivity(intent);
 
-			//startActivity(new Intent(getBaseContext(), BoxGameActivity.class));
+//			startActivity(new Intent(getBaseContext(), BoxGameActivity.class));
 			
-//			startActivity(new Intent(getBaseContext(), MonkeyGameActivity.class));
+			startActivity(new Intent(getBaseContext(), MonkeyGameActivity.class));
 			finish();
 		} 
 	}

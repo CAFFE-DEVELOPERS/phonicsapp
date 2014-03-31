@@ -207,8 +207,10 @@ public class BoxGameActivity extends SimpleBaseGameActivity
 		// TODO Auto-generated method stub
 		boxGameActivityInstance = this;
 		Display display = getWindowManager().getDefaultDisplay();
-		CAMERA_HEIGHT = display.getHeight();
-		CAMERA_WIDTH = display.getWidth();
+//		CAMERA_HEIGHT = display.getHeight();
+//		CAMERA_WIDTH = display.getWidth();
+		CAMERA_WIDTH = 800;
+		CAMERA_HEIGHT = 454;
 		
 		ImageHight = 120;
 		ImageWidth = 120;

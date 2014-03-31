@@ -209,8 +209,10 @@ public class MonkeyGameActivity  extends SimpleBaseGameActivity implements IOnAr
 	{
 		MonkeyGameActivityActivity = this;
 		Display display = getWindowManager().getDefaultDisplay();
-		CAMERA_HEIGHT = display.getHeight();
-		CAMERA_WIDTH = display.getWidth();
+//		CAMERA_HEIGHT = display.getHeight();
+//		CAMERA_WIDTH = display.getWidth();
+		CAMERA_HEIGHT = 454;
+		CAMERA_WIDTH = 800;
 		
 		ImageHeight = CAMERA_HEIGHT/1.1f;
 		ImageWidth = CAMERA_WIDTH/6.0f;

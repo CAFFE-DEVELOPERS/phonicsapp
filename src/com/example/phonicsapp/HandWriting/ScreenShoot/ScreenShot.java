@@ -33,7 +33,7 @@ public class ScreenShot
 					public void run() 
 					{
 						//Debug.d("Screenshot: " + pFilePath + " taken!");
-						GameActivity.changeTexture = 1;
+//						GameActivity.changeTexture = 1;
 						new setTexture(FileUtils.getAbsolutePathOnInternalStorage
 								(GameActivity.MainActivityInstace.getApplicationContext(), "/screen"+".jpg"));
 					} 
@@ -78,7 +78,7 @@ public class ScreenShot
 		GameActivity.screenCapture = new ScreenCapture();
 			GameActivity.mScene.attachChild(GameActivity.screenCapture);
 			
-			GameActivity.mScene.registerUpdateHandler(new TimerHandler((float)0.5, new ITimerCallback() 
+			GameActivity.mScene.registerUpdateHandler(new TimerHandler((float)0.1, new ITimerCallback() 
 			{
 				@Override
 				public void onTimePassed(TimerHandler pTimerHandler)
@@ -87,6 +87,7 @@ public class ScreenShot
 					
 					//trigger the screen shot
 					new ScreenShot();
+					GameActivity.changeTexture = 1;
 				} 
 			}));
 		}

@@ -676,7 +676,7 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 			mTextureRegionNumber[i] = BitmapTextureAtlasTextureRegionFactory
 					.createTiledFromAsset(mBitmapTextureAtlasNumber[i], this,
 							"Number" + (i-17) + ".png", 0, 0, 1, 1);
-		}
+		} 
 		
 		mBitmapTextureAtlasBackGround.load();
 		mBitmapTextureAtlasBlackBoard.load();
@@ -821,8 +821,10 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		letter = 0;
 
 		//getting the renderView width and height for taking the screen shot
-		viewWidth = GameActivity.MainActivityInstace.mRenderSurfaceView.getWidth() - 470;
-		viewHeight = GameActivity.MainActivityInstace.mRenderSurfaceView.getHeight() - 90;
+//		viewWidth = GameActivity.MainActivityInstace.mRenderSurfaceView.getWidth() - 470;
+//		viewHeight = GameActivity.MainActivityInstace.mRenderSurfaceView.getHeight() - 90;
+		viewWidth = 320;
+		viewHeight = 340;
 		
 		moOutLineX = CAMERA_WIDTH / 2 - 130;
 		moOutLineY = CAMERA_HEIGHT / 2 - 130;
