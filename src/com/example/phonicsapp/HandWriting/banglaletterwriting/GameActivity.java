@@ -37,6 +37,7 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 	{
 
 	public static int CAMERA_WIDTH, CAMERA_HEIGHT;
+	public static int BackgroundWidth, BackgroundHeight;
 	public static Camera mCamera;
 	public static Scene mScene;
 	public static Scene menuScene;
@@ -195,8 +196,12 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		// TODO Auto-generated method stub
 		MainActivityInstace = this;
 		Display display = getWindowManager().getDefaultDisplay();
-		CAMERA_HEIGHT = 454;// display.getHeight();
-		CAMERA_WIDTH = 800;//display.getWidth();
+		
+		BackgroundWidth = display.getWidth();
+		BackgroundHeight = display.getHeight();
+		
+		CAMERA_HEIGHT = 454;
+		CAMERA_WIDTH = 800;
 
 		mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
 
@@ -823,8 +828,9 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		//getting the renderView width and height for taking the screen shot
 //		viewWidth = GameActivity.MainActivityInstace.mRenderSurfaceView.getWidth() - 470;
 //		viewHeight = GameActivity.MainActivityInstace.mRenderSurfaceView.getHeight() - 90;
-		viewWidth = 320;
-		viewHeight = 340;
+		//320
+		viewWidth =  (int) (GameActivity.BackgroundWidth*0.45);
+		viewHeight = (int) (GameActivity.BackgroundHeight*0.75);
 		
 		moOutLineX = CAMERA_WIDTH / 2 - 130;
 		moOutLineY = CAMERA_HEIGHT / 2 - 130;
@@ -841,7 +847,7 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		GameActivity.letter = HandWritingMenu.letterNumber; 
 //		//create objects
 		createObjects.createObject();
-//		
+		
 //		//create book icon
 ////		PopUp.createBookIcon();
 ////		HandTutorial.handTutorialCreate();
