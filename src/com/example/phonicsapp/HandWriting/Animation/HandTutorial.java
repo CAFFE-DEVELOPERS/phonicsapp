@@ -12,9 +12,11 @@ import org.andengine.entity.modifier.IEntityModifier.IEntityModifierListener;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.util.modifier.IModifier;
 
+import com.example.phonicsapp.R;
 import com.example.phonicsapp.HandWriting.Duster.Duster;
 import com.example.phonicsapp.HandWriting.Popup.PopUp;
 import com.example.phonicsapp.HandWriting.banglaletterwriting.GameActivity;
+import com.example.phonicsapp.HandWriting.banglaletterwriting.NumberSprites;
 
 public class HandTutorial
 {
@@ -44,6 +46,10 @@ public class HandTutorial
 					public void onModifierFinished(IModifier<IEntity> arg0,
 							IEntity arg1)
 					{
+						// play sound
+						GameActivity.audioPlay = true;
+						NumberSprites.playAudio(R.raw.hw_three);
+						
 						//call the start animation 
 						handTutorialStart(GameActivity.handTutorial.getX(), 
 								GameActivity.handTutorial.getY(),
@@ -76,6 +82,9 @@ public class HandTutorial
 						{
 							GameActivity.handTutorial.unregisterEntityModifier(loopMod);
 							
+							// play sound
+							GameActivity.audioPlay = true;
+							NumberSprites.playAudio(R.raw.hw_four);
 							HandTutorial.handTutorialStart2(GameActivity.handTutorial.getX(), 
 									GameActivity.handTutorial.getY(), 150, 150);
 						}
@@ -115,7 +124,7 @@ public class HandTutorial
 					{
 
 						//animation from written Mo to right Mo
-						GameActivity.mScene.registerUpdateHandler(new TimerHandler(5, new ITimerCallback()
+						GameActivity.mScene.registerUpdateHandler(new TimerHandler((float) 0.6, new ITimerCallback()
 						{
 							@Override
 							public void onTimePassed(TimerHandler pTimerHandler)
@@ -154,7 +163,7 @@ public class HandTutorial
 					{
 						
 						//animation from Mo to cross button
-						GameActivity.mScene.registerUpdateHandler(new TimerHandler(5, new ITimerCallback()
+						GameActivity.mScene.registerUpdateHandler(new TimerHandler((float) 14, new ITimerCallback()
 						{
 							@Override
 							public void onTimePassed(TimerHandler pTimerHandler)
@@ -191,6 +200,9 @@ public class HandTutorial
 							handTutorialStart5(GameActivity.handTutorial.getX(),
 									 GameActivity.handTutorial.getY(),
 									 670, 300);
+							// play sound
+							GameActivity.audioPlay = true;
+							NumberSprites.playAudio(R.raw.hw_five);
 						}
 					}
 
@@ -222,6 +234,7 @@ public class HandTutorial
 					{
 						GameActivity.handTutorial.unregisterEntityModifier(loopMod1);
 						GameActivity.mScene.sortChildren();
+						
 					}
 
 					@Override

@@ -177,7 +177,7 @@ public class AnimationDrawTutorial
 				}
 				else
 				{
-					//if it is the first line, only then play the first line animation
+					//if it is the first line, only then play the first line animation, only for letter mo
 					if(GameActivity.letter==1)
 					{
 						//after finishing the tutorial remove the chalk draw
@@ -343,6 +343,9 @@ public class AnimationDrawTutorial
 						{
 							// TODO Auto-generated method stub
 							
+							//disabling the touch mode
+							GameActivity.isHandTutorialActive = true;
+							
 							//start first line animation cursor tutorial
 							createNumberSpriteAndCursor(1);
 						}
@@ -352,7 +355,10 @@ public class AnimationDrawTutorial
 		else if(a==2) 
 		{
 			//createNumberSpriteAndCursor(2);
+			
+			//enabling the touch mode
 			GameActivity.isActionMoving = true;
+			GameActivity.isHandTutorialActive = false;
 			
 			if(GameActivity.letter == 1)
 			{
@@ -503,10 +509,7 @@ public class AnimationDrawTutorial
 					GameActivity.moOutLineX+180, 
 					GameActivity.moOutLineY-30);
 		}
-		else if(a==2)
-		{
-					
-		}
+
 	}
 	
 	//moving the cursor with animation

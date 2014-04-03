@@ -125,7 +125,7 @@ public class Duster
 		GameActivity.slidingScreen = new Sprite(0, -800, GameActivity.mSlidingScreenTextureRegion, GameActivity.vertexBufferObjectManager);
 		GameActivity.mScene.attachChild(GameActivity.slidingScreen);
 			
-		Path finishingPath = new Path(2).to(-1200, -150).to(0  , -150);
+		Path finishingPath = new Path(2).to(-1200, -100).to(0, -100);
 
 		GameActivity.slidingScreen.registerEntityModifier(new PathModifier((float) 1.8, finishingPath, null, new IPathModifierListener()
 		{
@@ -135,9 +135,9 @@ public class Duster
 					
 					delete();
 					GameActivity.mScene.clearEntityModifiers();
-//					MainActivity.mScene.detachChildren();
+//					GameActivity.mScene.detachChildren();
 					GameActivity.mScene.detachSelf();
-					GameActivity.mScene.dispose();
+					//GameActivity.mScene.dispose();
 					
 					//Restarting the activity
 					GameActivity.mScene.registerUpdateHandler(new TimerHandler((float)2.2, new ITimerCallback() 

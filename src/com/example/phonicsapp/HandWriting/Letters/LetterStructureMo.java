@@ -29,19 +29,7 @@ public class LetterStructureMo
 					
 		//setting the cursor to top of first number sprite
 		NumberSprites.setCursorPosition(GameActivity.numberSprites[1]);
-					
-//		if(a==1)
-//		{
-//				//go to the next step or move the animated fish 
-//				animatedCursor(MainActivity.moOutLineX-10, 
-//						MainActivity.moOutLineY-20, 
-//						MainActivity.moOutLineX+180, 
-//						MainActivity.moOutLineY-20);
-//		}
-//		else if(a==2)
-//		{
-//						
-//		}
+		
 	}
 		
 	//Creating the structure for the Letter by positioning co-ordinates and also drawing with chalk
