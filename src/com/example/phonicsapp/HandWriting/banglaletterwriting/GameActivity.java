@@ -6,10 +6,12 @@ import org.andengine.engine.handler.timer.TimerHandler;
 import org.andengine.engine.options.EngineOptions;
 import org.andengine.engine.options.ScreenOrientation;
 import org.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
+import org.andengine.engine.options.resolutionpolicy.FixedResolutionPolicy;
 import org.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
 import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.scene.IOnSceneTouchListener;
 import org.andengine.entity.scene.Scene;
+import org.andengine.entity.scene.background.Background;
 import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.util.ScreenCapture;
@@ -27,11 +29,13 @@ import org.andengine.opengl.texture.region.TiledTextureRegion;
 import org.andengine.opengl.util.GLState;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.ui.activity.BaseGameActivity;
+import org.andengine.util.color.Color;
 import org.andengine.util.debug.Debug;
 import com.example.phonicsapp.HandWriting.Animation.AnimationDrawTutorial;
 import com.example.phonicsapp.HandWriting.Objects.createObjects;
 import com.example.phonicsapp.HandWriting.ScreenShoot.BitmapTextureAtlasSource;
 import android.media.MediaPlayer;
+import android.util.Log;
 import android.view.Display;
 
 public class GameActivity extends BaseGameActivity implements IOnSceneTouchListener 
@@ -201,13 +205,15 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		BackgroundWidth = display.getWidth();
 		BackgroundHeight = display.getHeight();
 		
+		Debug.d(""+BackgroundWidth);
+		Debug.d(""+BackgroundHeight);
 		CAMERA_HEIGHT = 454;
 		CAMERA_WIDTH = 800;
 
 		mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
 
 		return new EngineOptions(true, ScreenOrientation.LANDSCAPE_SENSOR,
-				new FillResolutionPolicy(), mCamera);
+				new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT), mCamera);
 	}
 
 	@Override
@@ -800,6 +806,9 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		mScene = new Scene();
 		mScene.setOnSceneTouchListener(this);
 		
+//		mScene.setBackground(new Background(Color.BLACK));
+//		mScene.setBackgroundEnabled(true);
+		
 		//Initializing all the variables
 		vertexBufferObjectManager = getVertexBufferObjectManager();
 		
@@ -826,12 +835,19 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		dusterFinishCounter = 0;
 		letter = 0;
 
+		StatusBarController.StatusBar.hideStatusBar();
 		//getting the renderView width and height for taking the screen shot
 //		viewWidth = GameActivity.MainActivityInstace.mRenderSurfaceView.getWidth() - 470;
 //		viewHeight = GameActivity.MainActivityInstace.mRenderSurfaceView.getHeight() - 90;
 		//320
+		
+		double h = (CAMERA_WIDTH/1.7);
+		double h1= BackgroundHeight-h;
+		Debug.d("h111111111111111111111111111111111111111111111111111111111111:"+h1);
+		
+		
 		viewWidth =  (int) (GameActivity.BackgroundWidth*0.45);
-		viewHeight = (int) (GameActivity.BackgroundHeight*0.75);
+		viewHeight = (int) ((GameActivity.BackgroundWidth/1.7)*0.75);
 		
 		moOutLineX = CAMERA_WIDTH / 2 - 130;
 		moOutLineY = CAMERA_HEIGHT / 2 - 130;

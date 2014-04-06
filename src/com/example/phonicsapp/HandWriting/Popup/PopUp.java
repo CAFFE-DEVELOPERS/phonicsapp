@@ -317,7 +317,7 @@ public class PopUp
 		{
 			GameActivity.drawnPicture = new Sprite(20, -10, GameActivity.textureRegion,
 					GameActivity.vertexBufferObjectManager);
-//			GameActivity.drawnPicture.setScale((float) 0.6);
+//			GameActivity.drawnPicture.setScale((float) 0.8);
 			GameActivity.drawnPicture.setWidth(190);
 			GameActivity.drawnPicture.setHeight(170);
 			popUpArea.attachChild(GameActivity.drawnPicture);
