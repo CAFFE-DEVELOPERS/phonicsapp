@@ -55,8 +55,10 @@ public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListene
 		// TODO Auto-generated method stub
 		MenuInstace = this;
 		Display display = getWindowManager().getDefaultDisplay();
-		CAMERA_HEIGHT = display.getHeight();
-		CAMERA_WIDTH = display.getWidth();
+//		CAMERA_HEIGHT = display.getHeight();
+//		CAMERA_WIDTH = display.getWidth();
+		CAMERA_HEIGHT = 454;
+		CAMERA_WIDTH = 800;
 
 		mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
 
@@ -316,7 +318,7 @@ public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListene
 
 //			startActivity(new Intent(getBaseContext(), BoxGameActivity.class));
 			
-			startActivity(new Intent(getBaseContext(), MonkeyGameActivity.class));
+			startActivity(new Intent(getBaseContext(), BoxGameActivity.class));
 			finish();
 		} 
 	}

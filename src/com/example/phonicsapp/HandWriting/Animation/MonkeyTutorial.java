@@ -21,7 +21,7 @@ public class MonkeyTutorial
 	//creating monkeyTutorial
 	public static void monkeyTutorialCreate()
 	{
-		GameActivity.monkeyTutorial = new AnimatedSprite(100, -400, GameActivity.mMonkeyTextureRegion,
+		GameActivity.monkeyTutorial = new AnimatedSprite(100, -800, GameActivity.mMonkeyTextureRegion,
 				GameActivity.vertexBufferObjectManager) 
 		{
 			@Override
@@ -47,8 +47,9 @@ public class MonkeyTutorial
 		};
 		
 		//animating the monkey tutorial
-		GameActivity.monkeyTutorial.animate(new long[] { 1000, 1000, 1000, 100, 100, 4000,
-				1000, 1000, 100, 100 }, 0, 9, true);
+		GameActivity.monkeyTutorial.animate(new long[] { 50, 50, 50, 50, 50, 4000,
+				50, 50, 50, 50 }, 0, 9, true);
+		GameActivity.monkeyTutorial.setScale((float) 0.6);
 		GameActivity.mScene.registerTouchArea(GameActivity.monkeyTutorial);
 		GameActivity.mScene.attachChild(GameActivity.monkeyTutorial);
 		
@@ -73,7 +74,7 @@ public class MonkeyTutorial
 			)
 	{
 
-		Path createMonkeyPath = new Path(2).to(100, -600).to(0, 3);
+		Path createMonkeyPath = new Path(2).to(100, -600).to(0, -230);
 
 		GameActivity.monkeyTutorial.registerEntityModifier(new PathModifier(
 				(float) 4.3, createMonkeyPath, null, new IPathModifierListener() 

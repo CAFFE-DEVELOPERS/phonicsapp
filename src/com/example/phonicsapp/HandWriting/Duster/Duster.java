@@ -42,6 +42,18 @@ public class Duster
 						Debug.d("dustercounter:"+GameActivity.dusterCounter);
 						if(GameActivity.dusterFinishCounter==1)
 						{	
+							if(GameActivity.handTutorial!=null)
+							{
+								if(GameActivity.handTutorial.hasParent() == true)
+								{
+									GameActivity.mScene.detachChild(GameActivity.handTutorial);
+								}
+							}
+							
+							if(GameActivity.duster.hasParent() == true)
+							{
+								GameActivity.mScene.detachChild(GameActivity.duster);
+							}
 							finishDuster();
 						}
 					}

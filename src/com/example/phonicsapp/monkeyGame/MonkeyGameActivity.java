@@ -440,7 +440,7 @@ public class MonkeyGameActivity  extends SimpleBaseGameActivity implements IOnAr
 
 		//debug mode
 		//RootTools.debugMode = true; 
-		StatusBar.showStatusBar();
+		StatusBar.hideStatusBar();
 				
 		monkeyGameObjectScale = 0.6;
 		

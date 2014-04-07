@@ -66,9 +66,11 @@ public class GameMainPage extends SimpleBaseGameActivity
 		// TODO Auto-generated method stub
 		GameMainPageInstace = this;
 		Display display = getWindowManager().getDefaultDisplay();
-		CAMERA_HEIGHT = display.getHeight();
-		CAMERA_WIDTH = display.getWidth();
-		StatusBar.showStatusBar();
+//		CAMERA_HEIGHT = display.getHeight();
+//		CAMERA_WIDTH = display.getWidth();
+		CAMERA_HEIGHT = 454;
+		CAMERA_WIDTH = 800;
+		StatusBar.hideStatusBar();
 		
 		mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
 		

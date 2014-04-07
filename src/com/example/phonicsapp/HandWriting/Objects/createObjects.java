@@ -56,6 +56,19 @@ public class createObjects
 		GameActivity.blackBoard.setWidth((float) (GameActivity.blackBoard.getWidth() * 1.2));
 		GameActivity.mScene.attachChild(GameActivity.blackBoard);
 		
+		//Rectangle for drawing during tutorial
+		GameActivity.rectangle = new Rectangle(10, 10, 40, 40, GameActivity.vertexBufferObjectManager);
+		GameActivity.mScene.attachChild(GameActivity.rectangle);
+		GameActivity.rectangle.setVisible(false);
+		
+		//invisible rectangle for better collision detection
+		GameActivity.rect = new Rectangle(0, 0, 40, 40, GameActivity.vertexBufferObjectManager);
+		GameActivity.mScene.attachChild(GameActivity.rect);
+		GameActivity.rect.setColor(Color.RED);
+		GameActivity.rect.setVisible(false);
+		
+		//MonkeyTutorial Create
+		MonkeyTutorial.monkeyTutorialCreate();
 		
 		GameActivity.homeButton = new Sprite(GameActivity.moOutLineX + 370, GameActivity.moOutLineY -80,
 				GameActivity.mHomeButtoTextureRegion, GameActivity.vertexBufferObjectManager)
@@ -67,12 +80,12 @@ public class createObjects
 				{
 				case TouchEvent.ACTION_DOWN:
 					
-//					if(GameActivity.isPopupActive== false)
-//					{
+					if(GameActivity.isHomeButtonCreated== true)
+					{
 						GameActivity.MainActivityInstace.finish();
 						GameActivity.MainActivityInstace.startActivity(new Intent(
 								GameActivity.MainActivityInstace.getBaseContext(), HandWritingMenu.class));
-//					}
+					}
 					
 				break;
 				case TouchEvent.ACTION_UP:
@@ -92,23 +105,9 @@ public class createObjects
 //		GameActivity.homeButton.setHeight((float) (GameActivity.homeButton.getHeight() * 1.5));
 //		GameActivity.homeButton.setWidth((float) (GameActivity.homeButton.getWidth() * 1.2));
 		GameActivity.homeButton.setScale((float) 0.6);
+		GameActivity.homeButton.setVisible(false);
 		GameActivity.mScene.registerTouchArea(GameActivity.homeButton);
 		GameActivity.mScene.attachChild(GameActivity.homeButton);
-		
-
-		//Rectangle for drawing during tutorial
-		GameActivity.rectangle = new Rectangle(10, 10, 40, 40, GameActivity.vertexBufferObjectManager);
-		GameActivity.mScene.attachChild(GameActivity.rectangle);
-		GameActivity.rectangle.setVisible(false);
-		
-		//invisible rectangle for better collision detection
-		GameActivity.rect = new Rectangle(0, 0, 40, 40, GameActivity.vertexBufferObjectManager);
-		GameActivity.mScene.attachChild(GameActivity.rect);
-		GameActivity.rect.setColor(Color.RED);
-		GameActivity.rect.setVisible(false);
-		
-		//MonkeyTutorial Create
-		MonkeyTutorial.monkeyTutorialCreate();
 		
 		Duster.createDuster();
 		

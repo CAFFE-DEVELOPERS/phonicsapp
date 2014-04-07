@@ -161,6 +161,7 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 	public static int aCounter = 0, bCounter, serialCounter = 1, totalLoadNumberPic = 20;
 	public static int monkeyTutorialStart;
 	public static int spriteCounter, dusterCounter, dusterFinishCounter ;
+	public static boolean isHomeButtonCreated;
 	public static int spriteCounterLimit;
 	public static int  state = 0;
 	public static Rectangle rect;
@@ -237,9 +238,9 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 			Debug.e(e);
 		}
 		
-        splashTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 500, 500, TextureOptions.DEFAULT);
+        splashTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 643, 906, TextureOptions.DEFAULT);
         splashTextureRegion = BitmapTextureAtlasTextureRegionFactory.createFromAsset(splashTextureAtlas,
-        		this, "juggleMonkey.png", 0, 0);
+        		this, "juggleMonkey3.png", 0, 0);
         splashTextureAtlas.load();
 		
         pOnCreateResourcesCallback.onCreateResourcesFinished();
@@ -293,7 +294,7 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
                 pGLState.enableDither();
             }
     	};
-    	splash.setScale((float) 0.6);
+    	splash.setScale((float) 0.4);
     	splash.setPosition((CAMERA_WIDTH - splash.getWidth()) * 0.5f, (CAMERA_HEIGHT - splash.getHeight()) * 0.5f);
     	splashScene.attachChild(splash);
 		
@@ -785,9 +786,9 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 			Debug.e(e);
 		}
 		
-		mAnimatedMonkeyBitmapTextureAtlas = new BuildableBitmapTextureAtlas(this.getTextureManager(), 2000, 267, TextureOptions.NEAREST);
+		mAnimatedMonkeyBitmapTextureAtlas = new BuildableBitmapTextureAtlas(this.getTextureManager(), 2080, 682, TextureOptions.NEAREST);
 		mMonkeyTextureRegion = BitmapTextureAtlasTextureRegionFactory.
-				createTiledFromAsset(this.mAnimatedMonkeyBitmapTextureAtlas, this, "monkeyTutorial.png", 10, 1);
+				createTiledFromAsset(this.mAnimatedMonkeyBitmapTextureAtlas, this, "monkeyTutorial1.png", 10, 1);
 		
 		try 
 		{
@@ -834,6 +835,7 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		dusterCounter = 0;
 		dusterFinishCounter = 0;
 		letter = 0;
+		isHomeButtonCreated = false;
 
 		StatusBarController.StatusBar.hideStatusBar();
 		//getting the renderView width and height for taking the screen shot
@@ -841,9 +843,9 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 //		viewHeight = GameActivity.MainActivityInstace.mRenderSurfaceView.getHeight() - 90;
 		//320
 		
-		double h = (CAMERA_WIDTH/1.7);
-		double h1= BackgroundHeight-h;
-		Debug.d("h111111111111111111111111111111111111111111111111111111111111:"+h1);
+//		double h = (CAMERA_WIDTH/1.7);
+//		double h1= BackgroundHeight-h;
+//		Debug.d("h111111111111111111111111111111111111111111111111111111111111:"+h1);
 		
 		
 		viewWidth =  (int) (GameActivity.BackgroundWidth*0.45);

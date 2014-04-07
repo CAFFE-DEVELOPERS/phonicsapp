@@ -17,12 +17,21 @@ public class PopUp
 {
 	public static IEntity popUpArea;
 	public static int popValue = 0;
+	static Path createPopUpPath ;
 
 	//create book icon
 	public static void createBookIcon() 
 	{
 		//creating pop up after book icon
-		createPopUp();
+		GameActivity.mScene.registerUpdateHandler(new TimerHandler((float) 0.5, new ITimerCallback()
+		{
+			@Override
+			public void onTimePassed(TimerHandler pTimerHandler) 
+			{
+				// TODO Auto-generated method stub
+				createPopUp();
+			}
+		}));
 				
 		// create book icon
 		GameActivity.bookIcon = new Sprite(0, GameActivity.CAMERA_HEIGHT - 200, 
@@ -290,7 +299,6 @@ public class PopUp
 	{
 
 		GameActivity.popUpValue = upDown;
-		Path createPopUpPath = null;
 
 		// Down to up or opening pop up
 		if (upDown == 0) 
@@ -310,17 +318,30 @@ public class PopUp
 			
 			createPopUpPath = new Path(2).to(100, 100).to(100,
 					GameActivity.CAMERA_HEIGHT + 500);
+			
+			
+			//create home button if not created
+			if(GameActivity.isHomeButtonCreated == false)
+			{
+				GameActivity.isHomeButtonCreated = true;
+				GameActivity.homeButton.setVisible(true);
+			}
+			
 		}
 
 		// If screen shot taken, then show screen shot of drawn image
 		if (GameActivity.changeTexture == 1) 
 		{
-			GameActivity.drawnPicture = new Sprite(20, -10, GameActivity.textureRegion,
-					GameActivity.vertexBufferObjectManager);
-//			GameActivity.drawnPicture.setScale((float) 0.8);
-			GameActivity.drawnPicture.setWidth(190);
-			GameActivity.drawnPicture.setHeight(170);
-			popUpArea.attachChild(GameActivity.drawnPicture);
+			if(GameActivity.textureRegion!= null)
+			{
+				GameActivity.drawnPicture = new Sprite(20, -10, GameActivity.textureRegion,
+						GameActivity.vertexBufferObjectManager);
+//				GameActivity.drawnPicture.setScale((float) 0.8);
+				GameActivity.drawnPicture.setWidth(190);
+				GameActivity.drawnPicture.setHeight(170);
+				popUpArea.attachChild(GameActivity.drawnPicture);
+			
+			}
 		}
 
 		popUpArea.registerEntityModifier(new PathModifier((float) 1.3,
