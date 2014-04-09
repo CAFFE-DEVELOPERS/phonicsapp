@@ -16,17 +16,6 @@ public class TimerHandlers
 			public void onTimePassed(TimerHandler pTimerHandler) 
 			{
 				// TODO Auto-generated method stub
-				// if all the items are in the box
-				if (!(BoxGameActivity.obj3.getX() >= 0) && !(BoxGameActivity.obj2.getX() >= 0)
-						&& !(BoxGameActivity.obj6.getX() >= 0) && !(BoxGameActivity.obj4.getX() >= 0)
-						&& !(BoxGameActivity.obj1.getX() >= 0) && !(BoxGameActivity.obj5.getX() >= 0))
-				{
-					BoxGameActivity.counter++;
-					if (BoxGameActivity.counter == 1) 
-					{
-						BoxGameActivity.startActivity();
-					}
-				}
 
 				// Mula
 				if (Functions.collisoinCheck(BoxGameActivity.closedBox, BoxGameActivity.obj1) == 1
@@ -44,7 +33,7 @@ public class TimerHandlers
 				else if (Functions.collisoinCheck(BoxGameActivity.closedBox, BoxGameActivity.obj2) == 1
 						|| Functions.collisoinCheck(BoxGameActivity.closedBox, BoxGameActivity.obj2) == 2)
 				{
-					if (Functions.disableCol == 0) 
+					if (BoxGameActivity.disableCol == 0) 
 					{
 						BoxGameActivity.openedBox.setVisible(true);
 						BoxGameActivity.closedBox.setVisible(false);
@@ -103,7 +92,7 @@ public class TimerHandlers
 				// Mama
 				else if (Functions.collisoinCheck(BoxGameActivity.closedBox, BoxGameActivity.obj6) == 1
 						|| Functions.collisoinCheck(BoxGameActivity.closedBox, BoxGameActivity.obj6) == 2) 
-				{
+				{ 
 					BoxGameActivity.openedBox.setVisible(true);
 					BoxGameActivity.closedBox.setVisible(false);
 
@@ -130,7 +119,7 @@ public class TimerHandlers
 				else if (Functions.collisoinCheck(BoxGameActivity.closedBox, BoxGameActivity.wrongObj2) == 1
 						|| Functions.collisoinCheck(BoxGameActivity.closedBox, BoxGameActivity.wrongObj2) == 2)
 				{
-					if (Functions.disableCol == 0)
+					if (BoxGameActivity.disableCol == 0)
 					{
 						BoxGameActivity.openedBox.setVisible(true);
 						BoxGameActivity.closedBox.setVisible(false);
@@ -153,6 +142,20 @@ public class TimerHandlers
 					BoxGameActivity.openedBox.setVisible(false);
 					BoxGameActivity.closedBox.setVisible(true);
 				}
+				
+				
+				// if all the items are in the box
+				if (!(BoxGameActivity.obj3.getX() >= 0) && !(BoxGameActivity.obj2.getX() >= 0)
+						&& !(BoxGameActivity.obj6.getX() >= 0) && !(BoxGameActivity.obj4.getX() >= 0)
+						&& !(BoxGameActivity.obj1.getX() >= 0) && !(BoxGameActivity.obj5.getX() >= 0))
+				{
+					BoxGameActivity.counter++;
+					if (BoxGameActivity.counter == 1) 
+					{
+						BoxGameActivity.startActivity();
+					}
+				}
+
 			}
 		});
 		

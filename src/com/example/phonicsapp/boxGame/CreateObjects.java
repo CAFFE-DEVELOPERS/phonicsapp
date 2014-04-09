@@ -4,6 +4,8 @@ import org.andengine.entity.Entity;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.util.debug.Debug;
 
+import android.view.Menu;
+
 public class CreateObjects 
 {
 
@@ -16,12 +18,25 @@ public class CreateObjects
 			BoxGameActivity.backGround = new Sprite(0, 0, BoxGameActivity.mJungleBackGroundTextureRegion,
 					BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
 			
+			BoxGameActivity.openedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
+					BoxGameActivity.mJungleBoxOpenTextureRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
+			
+			BoxGameActivity.closedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
+					BoxGameActivity.mJungleBoxCloseTextureRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
+
+			
 		}
 		//Bo
 		else if(boxGameMenuLetter==6)
 		{
 			BoxGameActivity.backGround = new Sprite(0, 0, BoxGameActivity.mBeachBackGroundTextureRegion,
 					BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
+			
+			BoxGameActivity.openedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
+					BoxGameActivity.mBeachBoxOpenTextureRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
+			
+			BoxGameActivity.closedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
+					BoxGameActivity.mBeachBoxCloseTextureRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
 			
 		}
 		//Raw
@@ -30,6 +45,13 @@ public class CreateObjects
 			BoxGameActivity.backGround = new Sprite(0, 0, BoxGameActivity.mUnderWaterBackGroundTextureRegion,
 					BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
 			
+			BoxGameActivity.openedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
+					BoxGameActivity.mUnderWaterBoxTextureOpenRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
+			
+			BoxGameActivity.closedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
+					BoxGameActivity.mUnderWaterBoxCloseTextureRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
+			
+			
 		}
 		//Toh
 		else if(boxGameMenuLetter==19)
@@ -37,19 +59,21 @@ public class CreateObjects
 			BoxGameActivity.backGround = new Sprite(0, 0, BoxGameActivity.mPlanetBackGroundTextureRegion,
 					BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
 			
+			BoxGameActivity.openedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
+					BoxGameActivity.mPlanetBoxOpenTextureRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
+			BoxGameActivity.closedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
+					BoxGameActivity.mPlanetBoxCloseTextureRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
+			
 		}
 			BoxGameActivity.backGround.setHeight(BoxGameActivity.CAMERA_HEIGHT);
 			BoxGameActivity.backGround.setWidth(BoxGameActivity.CAMERA_WIDTH);
 			BoxGameActivity.mScene.attachChild(BoxGameActivity.backGround);
 		
-		BoxGameActivity.openedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
-				BoxGameActivity.mBox1TextureRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
+		
+		//Opened box
 		BoxGameActivity.mScene.attachChild(BoxGameActivity.openedBox);
 		BoxGameActivity.openedBox.setVisible(false);
-		
 		//closed box
-		BoxGameActivity.closedBox = new Sprite(BoxGameActivity.CAMERA_WIDTH/2-100, BoxGameActivity.CAMERA_HEIGHT/2, 
-				BoxGameActivity.mBox2TextureRegion,  BoxGameActivity.boxGameActivityInstance.getVertexBufferObjectManager());
 		BoxGameActivity.mScene.attachChild(BoxGameActivity.closedBox);
 		BoxGameActivity.closedBox.setVisible(true);
 		

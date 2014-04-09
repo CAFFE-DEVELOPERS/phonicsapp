@@ -23,25 +23,24 @@ public class Functions
 	
 	static Boolean audioPlay = false;
 	static MediaPlayer mediaPlayer = new MediaPlayer();
-	static int val, count = 0 , disableCol = 0;
 	public static SequenceEntityModifier jumpModifier, jumpModifier1;
 	
-	static BoxGameActivity boxGameActivityInstance;
+//	static BoxGameActivity boxGameActivityInstance;
 	
 	//a is the Box and b is the other Object
 	public static int collisoinCheck(Sprite a, Sprite b)
 	{
 		if(a.getX()-b.getX()>-30 && a.getX()-b.getX()<90 && a.getY()-b.getY()<50 && a.getY()-b.getY()>-135)
 		{
-			val = 1;
+			BoxGameActivity.val = 1;
 			//Debug.d("Close1");
-			return val;
+			return BoxGameActivity.val;
 		}
 		else if(b.getX()-a.getX()>20 && b.getX()-a.getX()<140 && a.getY()-b.getY()<50 && a.getY()-b.getY()>-135)
 		{
-			val = 2;
+			BoxGameActivity.val = 2;
 			//Debug.d("Close2");
-			return val;
+			return BoxGameActivity.val;
 		}
 		else
 		{
@@ -192,7 +191,7 @@ public class Functions
 		        protected void onModifierStarted(IEntity pItem)
 		        {
 		                super.onModifierStarted(pItem);
-		                disableCol = 1;
+		                BoxGameActivity.disableCol = 1;
 		                // Your action after starting modifier
 		        }
 			       
@@ -228,7 +227,7 @@ public class Functions
 			        		public void onPathFinished(final PathModifier pPathModifier, final IEntity pEntity) 
 			        		{
 			        			a.setAlpha(1);
-			        			disableCol = 0;
+			        			BoxGameActivity.disableCol = 0;
 			        		}
 		        	}));
 		       }
@@ -239,14 +238,14 @@ public class Functions
 
 	}
 	//Audio play Function
-	public static void playAudio(int val)
+	public static void playAudio(int value)
 	{
 		if(audioPlay)
 		{
 			if(!mediaPlayer.isPlaying())
 			{
 				mediaPlayer.reset();
-				mediaPlayer = MediaPlayer.create(getAppContext(), val);
+				mediaPlayer = MediaPlayer.create(getAppContext(), value);
 				
 				try 
 				{

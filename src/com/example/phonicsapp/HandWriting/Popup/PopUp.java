@@ -54,7 +54,7 @@ public class PopUp
 							popValue = 1;
 							
 							//if the pop up is active, then disabling the book icon from pressing again
-							if(GameActivity.isPopupActive == false)
+							if(GameActivity.isPopupActive == false && GameActivity.textureRegion!=null)
 							{
 								startPopUp(0);
 							}
@@ -332,16 +332,12 @@ public class PopUp
 		// If screen shot taken, then show screen shot of drawn image
 		if (GameActivity.changeTexture == 1) 
 		{
-			if(GameActivity.textureRegion!= null)
-			{
-				GameActivity.drawnPicture = new Sprite(20, -10, GameActivity.textureRegion,
-						GameActivity.vertexBufferObjectManager);
-//				GameActivity.drawnPicture.setScale((float) 0.8);
-				GameActivity.drawnPicture.setWidth(190);
-				GameActivity.drawnPicture.setHeight(170);
-				popUpArea.attachChild(GameActivity.drawnPicture);
-			
-			}
+			GameActivity.drawnPicture = new Sprite(20, -10, GameActivity.textureRegion,
+					GameActivity.vertexBufferObjectManager);
+//			GameActivity.drawnPicture.setScale((float) 0.8);
+			GameActivity.drawnPicture.setWidth(190);
+			GameActivity.drawnPicture.setHeight(170);
+			popUpArea.attachChild(GameActivity.drawnPicture);
 		}
 
 		popUpArea.registerEntityModifier(new PathModifier((float) 1.3,

@@ -316,9 +316,9 @@ public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListene
 //			intent.putExtra("val",letterNumber);
 //			startActivity(intent);
 
-//			startActivity(new Intent(getBaseContext(), BoxGameActivity.class));
-			
 			startActivity(new Intent(getBaseContext(), BoxGameActivity.class));
+			
+//			startActivity(new Intent(getBaseContext(), MonkeyGameActivity.class));
 			finish();
 		} 
 	}

@@ -33,6 +33,24 @@ public class Objects extends Sprite
 			}
 			case TouchEvent.ACTION_MOVE: 
 			{
+				if(pSceneTouchEvent.getX()<0)
+				{
+					this.setX(this.getX()); 
+				}
+				else if(pSceneTouchEvent.getY()<0)
+				{
+					this.setY(this.getY());
+				}
+				else if(pSceneTouchEvent.getX()>750)
+				{
+					this.setX(this.getX());
+				}
+				else if(pSceneTouchEvent.getY()>400)
+				{
+					this.setY(this.getY());
+				}
+				else
+				{
 				this.setPosition(pSceneTouchEvent.getX() - this.getWidth() / 2, 
 						pSceneTouchEvent.getY() - this.getHeight() / 2);
 				
@@ -121,6 +139,7 @@ public class Objects extends Sprite
 						Functions.audioPlay = true;
 						Functions.playAudio(BoxGameActivity.wrongObj2Sound);
 					}
+				}
 				}
 				break;
 			} 
