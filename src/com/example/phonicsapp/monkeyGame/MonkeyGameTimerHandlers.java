@@ -18,7 +18,7 @@ public class MonkeyGameTimerHandlers
 						// TODO Auto-generated method stub
 
 						// Loading the Objects according to the game letter
-						MonkeyGameLevelResources.LoadObjects(MonkeyGameActivity.monkeyGameMenuLetterSelector);
+						LoadObject.LoadObjects(MonkeyGameActivity.monkeyGameMenuLetterSelector);
 
 						MonkeyGameActivity.randomItem = (int) (Math.random() * 6);
 						MonkeyGameActivity.randomItem1 = (int) (Math.random() * 6);

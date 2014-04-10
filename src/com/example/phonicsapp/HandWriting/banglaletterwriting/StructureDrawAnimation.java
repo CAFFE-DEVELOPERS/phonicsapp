@@ -260,7 +260,7 @@ public class StructureDrawAnimation
 		//Debug.d("I:"+MainActivity.aCounter);
 		
 		//if too many sprites are drawn or fails to draw restart the game 
-		if(GameActivity.aCounter>4500)
+		if(GameActivity.aCounter>4800)
 		{
 			GameActivity.MainActivityInstace.finish();
 			GameActivity.MainActivityInstace.startActivity(new Intent(

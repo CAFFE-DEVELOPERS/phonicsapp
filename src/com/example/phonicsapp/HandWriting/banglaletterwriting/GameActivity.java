@@ -350,7 +350,6 @@ public class GameActivity extends BaseGameActivity implements IOnSceneTouchListe
 		
 //		double h = (CAMERA_WIDTH/1.7);
 //		double h1= BackgroundHeight-h;
-//		Debug.d("h111111111111111111111111111111111111111111111111111111111111:"+h1);
 		
 		
 		viewWidth =  (int) (GameActivity.BackgroundWidth*0.45);

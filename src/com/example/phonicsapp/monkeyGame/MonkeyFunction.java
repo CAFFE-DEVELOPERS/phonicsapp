@@ -120,7 +120,7 @@ public class MonkeyFunction
 		//load monkey according to the level
 		if(MonkeyGameActivity.monkeyGameMenuLetterSelector==1)
 		{
-			MonkeyGameActivity.monkey1 = new Sprite(0, 50, MonkeyGameActivity.mFaceTextureRegionMonkeyWithoutReward,
+			MonkeyGameActivity.monkey1 = new Sprite(0, 50, MonkeyGameActivity.mFaceTextureRegionMonkeyWithoutBanana,
 					MonkeyGameActivity.vbo);
 		}
 		else if(MonkeyGameActivity.monkeyGameMenuLetterSelector==6)

@@ -63,11 +63,11 @@ public class MonkeyGameActivity  extends SimpleBaseGameActivity implements IOnAr
 	public static Scene mScene;
 	
 	//Fixed Objects monkey1, monkey2, banana;
-	public static BitmapTextureAtlas mBitmapTextureAtlasMonkeyWithoutReward, mBitmapTextureAtlasMonkeyWithBanana,
+	public static BitmapTextureAtlas mBitmapTextureAtlasMonkeyWithoutBanana, mBitmapTextureAtlasMonkeyWithBanana,
 									mBitmapTextureAtlasMonkeyWithFish, mBitmapTextureAtlasMonkeyWithAlien, 
 									mBitmapTextureAtlasMonkeyWithCup, mBitmapTextureAtlasMonkeyWithoutCup,
 									mBitmapTextureAtlasMonkeyWithoutAlien, mBitmapTextureAtlasMonkeyWithoutFish;
-	public static ITextureRegion mFaceTextureRegionMonkeyWithoutReward, mFaceTextureRegionMonkeyWithBanana, 
+	public static ITextureRegion mFaceTextureRegionMonkeyWithoutBanana, mFaceTextureRegionMonkeyWithBanana, 
 									mFaceTextureRegionMonkeyWithFish, mFaceTextureRegionMonkeyWithAlien,
 									mFaceTextureRegionMonkeyWithCup, mFaceTextureRegionMonkeyWithoutCup,
 									mFaceTextureRegionMonkeyWithoutAlien, mFaceTextureRegionMonkeyWithoutFish;
@@ -226,7 +226,7 @@ public class MonkeyGameActivity  extends SimpleBaseGameActivity implements IOnAr
 	@Override
 	public void onCreateResources() 
 	{
-		LoadObjects.loadAllObjects();
+		LoadResources.loadAllObjects();
 	}
 	
 	@Override
@@ -257,7 +257,7 @@ public class MonkeyGameActivity  extends SimpleBaseGameActivity implements IOnAr
 
 		//debug mode
 		//RootTools.debugMode = true; 
-		StatusBar.hideStatusBar();
+//		StatusBar.hideStatusBar();
 				
 		monkeyGameObjectScale = 0.6;
 		

@@ -250,7 +250,7 @@ public class BoxGameActivity extends SimpleBaseGameActivity
 	protected void onCreateResources() 
 	{
 		// TODO Auto-generated method stub
-		LoadObjects.loadAllObjects();
+		LoadResources.loadAllObjects();
 	}
 
 	@Override
@@ -276,14 +276,14 @@ public class BoxGameActivity extends SimpleBaseGameActivity
 		count = 0 ;
 		disableCol = 0;
 		
-		StatusBar.hideStatusBar();
+//		StatusBar.hideStatusBar();
 //		StatusBar.showStatusBar();
 		
 		//Getting the menu letter number
 		boxGameMenuLetterSelector = Menu.letterNumber;
 		
 		//Loading the objects according to letter
-		LevelResources.loadObjects(boxGameMenuLetterSelector); 
+		LevelObject.loadObjects(boxGameMenuLetterSelector); 
 		
 		//check collisions
 		TimerHandlers.checkObjectCollisions();

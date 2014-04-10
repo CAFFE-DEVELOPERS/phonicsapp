@@ -70,7 +70,8 @@ public class GameMainPage extends SimpleBaseGameActivity
 //		CAMERA_WIDTH = display.getWidth();
 		CAMERA_HEIGHT = 454;
 		CAMERA_WIDTH = 800;
-		StatusBar.hideStatusBar();
+		//StatusBar.hideStatusBar();
+		StatusBar.showStatusBar();
 		
 		mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
 		

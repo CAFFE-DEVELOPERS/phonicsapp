@@ -310,7 +310,7 @@ public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListene
 		letterNumber = number;
 		
 		if(letterNumber == 1 ||letterNumber == 6|| letterNumber == 4 || letterNumber == 19 )
-		{
+		{ 
 			menuLetters[row][column].setScale((float) 0.55);
 //			Intent intent = new Intent(getBaseContext(), AnimatedBookActivity.class);
 //			intent.putExtra("val",letterNumber);
