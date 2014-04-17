@@ -281,7 +281,7 @@ public class BoxGameActivity extends SimpleBaseGameActivity
 		
 		//Getting the menu letter number
 		boxGameMenuLetterSelector = Menu.letterNumber;
-		
+		 
 		//Loading the objects according to letter
 		LevelObject.loadObjects(boxGameMenuLetterSelector); 
 		

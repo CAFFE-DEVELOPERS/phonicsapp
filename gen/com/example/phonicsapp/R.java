@@ -22,13 +22,21 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int images=0x7f020001;
     }
     public static final class id {
-        public static final int btnStartProgress=0x7f090000;
+        public static final int imageView=0x7f090007;
+        public static final int imageView1=0x7f090003;
+        public static final int imageView2=0x7f090001;
+        public static final int imageView3=0x7f090000;
+        public static final int imageView4=0x7f090005;
+        public static final int imageView5=0x7f090004;
+        public static final int imageView6=0x7f090002;
+        public static final int surfaceView=0x7f090006;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int main=0x7f030001;
+        public static final int main_camera=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f080000;
