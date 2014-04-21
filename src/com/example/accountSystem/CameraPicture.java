@@ -150,7 +150,6 @@ public class CameraPicture extends Activity implements SurfaceHolder.Callback
         {
            // to draw the preview.
            mCamera.setPreviewDisplay(holder);
-           
         }
         catch (IOException exception) 
         {
