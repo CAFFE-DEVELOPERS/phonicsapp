@@ -17,20 +17,23 @@ public class RightFlipImage {
 		flipBook.setWidth(200f);
 		BaseActivity.mCurrentScene.attachChild(flipBook);
 	}
-	public void popUpFlipBook(Mouled mouled){		
+	public void popUpFlipBook(Mouled mouled){
+		mouled.mouled.detachSelf();
 		if(!mouled.mouled.hasParent()){
 			BaseActivity.rightFlipImage.flipBook.detachChildren();
 			BaseActivity.rightFlipImage.flipBook.attachChild(mouled.mouled);
 			mouled.mouled.setPosition(20, 20);
 			mouled.mouled.setHeight(140);
 			mouled.mouled.setWidth(140);
-			MoveModifier mf = new MoveModifier(0.1f, BaseActivity.CAMERA_WIDTH + 200, BaseActivity.CAMERA_WIDTH -180, flipBook.getY(), flipBook.getY());
-			flipBook.registerEntityModifier(mf);
+			/*MoveModifier mf = new MoveModifier(0.1f, BaseActivity.CAMERA_WIDTH + 200, BaseActivity.CAMERA_WIDTH -180, flipBook.getY(), flipBook.getY());
+			flipBook.registerEntityModifier(mf);*/
+			flipBook.setPosition(BaseActivity.CAMERA_WIDTH - 180, flipBook.getY());
 		}
 	}
 	public void popDownFlipBook(){
-		MoveModifier mf = new MoveModifier(0.1f, flipBook.getX(), BaseActivity.CAMERA_WIDTH +200, flipBook.getY(), flipBook.getY());
-		flipBook.registerEntityModifier(mf);
+		//MoveModifier mf = new MoveModifier(0.1f, flipBook.getX(), BaseActivity.CAMERA_WIDTH +200, flipBook.getY(), flipBook.getY());
+		//flipBook.registerEntityModifier(mf);
+		flipBook.setPosition(BaseActivity.CAMERA_WIDTH +200, flipBook.getY());
 		flipBook.detachChildren();
 	}
 }

@@ -89,8 +89,10 @@ public class BaseActivity extends SimpleBaseGameActivity {
 	public EngineOptions onCreateEngineOptions() {
 		// TODO Auto-generated method stub
 		Display display = getWindowManager().getDefaultDisplay();
-		CAMERA_HEIGHT = display.getHeight();
-		CAMERA_WIDTH = display.getWidth();
+		CAMERA_HEIGHT = 450;//display.getHeight();
+		CAMERA_WIDTH = 800;//display.getWidth();
+		//CAMERA_HEIGHT = display.getHeight();
+		//CAMERA_WIDTH = display.getWidth();
 		z_index = 0;
 		context = getApplicationContext();
 		//instance = this;
@@ -189,11 +191,12 @@ public class BaseActivity extends SimpleBaseGameActivity {
 		OthersTextureReason.add(BitmapTextureAtlasTextureRegionFactory.createFromAsset(MouledBuildableBitmapTextureAtlas, this, "others/book_flip.png"));
 		OthersTextureReason.add(BitmapTextureAtlasTextureRegionFactory.createFromAsset(MouledBuildableBitmapTextureAtlas, this, "others/book_2.png"));
 		OthersTextureReason.add(BitmapTextureAtlasTextureRegionFactory.createFromAsset(MouledBuildableBitmapTextureAtlas, this, "others/cross_icon.png"));
+		OthersTextureReason.add(BitmapTextureAtlasTextureRegionFactory.createFromAsset(MouledBuildableBitmapTextureAtlas, this, "others/komola_1.png"));
 		
 		ParrotBitmapTextureAtlus = new BitmapTextureAtlas(this.getTextureManager(),810, 810,TextureOptions.BILINEAR);
 		ParrotTextureReason = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(ParrotBitmapTextureAtlus, this, "animatedParrot.png",0,0,2,2);
 		
-		try {
+		try { 
 			BgBuildableBitmapTextureAtlas.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0, 0, 0));
 			LettersBuildableBitmapTextureAtlas.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0, 0, 0));
 			MouledBuildableBitmapTextureAtlas.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0, 0, 0));
@@ -212,7 +215,8 @@ public class BaseActivity extends SimpleBaseGameActivity {
 	protected void onDestroy()
 	{
 		super.onDestroy();
-	        System.exit(0);	
+        this.mEngine.onDestroy();
+	    System.exit(0);	
 	}
 
 	@Override
@@ -374,6 +378,8 @@ public class BaseActivity extends SimpleBaseGameActivity {
 		if(Letters.lettersNameContainer.contains(name)){
 			TempMarker = new Marker(pX+10, pY, 100f, 100f, textureReason.get(Letters.lettersNameContainer.indexOf(name)), vobm,context,Sound.getSingleSound(name),true,false,true,true);
 			TempMarker.markerSelf = TempMarker;
+			TempMarker.mostLeft = Scheming2.getLeftLastObject(TempMarker.markerSelf);
+			TempMarker.mostRight = Scheming2.getRightLastObject(TempMarker.markerSelf);
 			TempMarker.letter.setUserData(name);
 			markers.add(TempMarker);
 			markerJoinPermission(TempMarker);

@@ -343,9 +343,12 @@ public class Scheming2 {
 		return false;
 		
 	}
-	public static int checkBoundary(Marker marker) {
+	public static int checkBoundary(Marker marker, float tX,float tY) {
 		Marker leftMarker1 = marker.mostLeft;
 		Marker rightMarker1 = marker.mostRight;
+		int w=0,w1=0;
+		Marker tempW = marker;
+		Marker tempW1 = marker;
 		
 		boundaryMarker = marker;
 
@@ -356,43 +359,54 @@ public class Scheming2 {
 			rightMarker1 = marker;
 		}
 
+		while(tempW != null){
+			w+= tempW.letter.getWidth();
+			Log.d(TAG, (String) tempW.letter.getUserData());
+			tempW = tempW.left;
+		}
+		while(tempW1 != null){
+			w1+= tempW1.letter.getWidth();
+			tempW1 = tempW1.right; 
+		}
+		w = (int) (w + (33 - marker.letter.getWidth()/2));
+		w1 = (int) (w1 + (33 - marker.letter.getWidth()/2));
+		Log.d(TAG, "total " + Float.toString(tX+marker.letter.getWidth()/2-w) +" tX: " + marker.letter.getX()/2+ "word size: " + w + "width: "+marker.letter.getWidth());
 		//Left 
-		if (leftMarker1.letter.getX() < -30) {
-			while (leftMarker1 != null) {
-				MoveModifier mf = new MoveModifier(0.4f,leftMarker1.letter.getX(),leftMarker1.letter.getX() + 50,leftMarker1.letter.getY(), leftMarker1.letter.getY());
-				leftMarker1.letter.registerEntityModifier(mf);
-				leftMarker1 = leftMarker1.right;
-			}
-			return 1;
+		if ((tX)- w < 50 ) {
+				float previousX = marker.letter.getX();
+				float previousY = marker.letter.getY();
+				marker.letter.setPosition(marker.letter.getX(), tY-marker.letter.getHeight()/2);
+				Scheming2.moveBlock(previousX, previousY, marker.letter.getX(), marker.letter.getY(), marker);
+			return 1; 
 		}
-		//Top
-		else if (leftMarker1.letter.getY() < -20) {
-			while (leftMarker1 != null) {
-				MoveModifier mf = new MoveModifier(0.4f,leftMarker1.letter.getX(), leftMarker1.letter.getX(),leftMarker1.letter.getY(),leftMarker1.letter.getY() + 50);
-				leftMarker1.letter.registerEntityModifier(mf);
-				leftMarker1 = leftMarker1.right;
-			}
+		/*//Top
+		if (tY < -10) { 
+			float previousX = marker.letter.getX();
+			float previousY = marker.letter.getY();
+			marker.letter.setPosition(tX - marker.letter.getWidth(), marker.letter.getY());
+			Scheming2.moveBlock(previousX, previousY, marker.letter.getX(), marker.letter.getY(), marker);
+			
 			return 2;
-		}
+		}*/
 		//Right
-		else if (rightMarker1.letter.getX() + 100 > BaseActivity.CAMERA_WIDTH + 30) {
-			while (rightMarker1 != null) {
-				MoveModifier mf = new MoveModifier(0.4f,rightMarker1.letter.getX(),rightMarker1.letter.getX() - 50,rightMarker1.letter.getY(), rightMarker1.letter.getY());
-				rightMarker1.letter.registerEntityModifier(mf);
-				rightMarker1 = rightMarker1.left;
-			}
+		
+		else if (tX + w1 > BaseActivity.CAMERA_WIDTH - 100) {
+			float previousX = marker.letter.getX();
+			float previousY = marker.letter.getY();
+			marker.letter.setPosition(marker.letter.getX(), tY-marker.letter.getHeight()/2);
+			Scheming2.moveBlock(previousX, previousY, marker.letter.getX(), marker.letter.getY(), marker);
+
 			return 3;
 		}
 		//Bottom 
-		else if (leftMarker1.letter.getY() + 100 > BaseActivity.CAMERA_HEIGHT + 20) {
-			while (leftMarker1 != null) {
-				MoveModifier mf = new MoveModifier(0.4f,
-						leftMarker1.letter.getX(), leftMarker1.letter.getX(),leftMarker1.letter.getY(),leftMarker1.letter.getY() - 50);
-				leftMarker1.letter.registerEntityModifier(mf);
-				leftMarker1 = leftMarker1.right;
-			}
+		/*else if (tY > BaseActivity.CAMERA_HEIGHT - 50) {
+			float previousX = marker.letter.getX();
+			float previousY = marker.letter.getY();
+			marker.letter.setPosition(tX - marker.letter.getWidth(), marker.letter.getY());
+			Scheming2.moveBlock(previousX, previousY, marker.letter.getX(), marker.letter.getY(), marker);
+			
 			return 4;
-		}
+		}*/
 		
 		return 0;
 	}

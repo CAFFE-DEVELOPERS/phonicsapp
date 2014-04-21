@@ -1,5 +1,6 @@
 package com.example.phonicsapp.wordbuilding;
 
+import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.texture.region.ITextureRegion;
@@ -16,6 +17,8 @@ public class ScrollBar {
 	float yy ;
 	boolean isTouchDown;
 	String name;
+	Rectangle rectAngle;
+	
 	public ScrollBar(float pX, float pY, float pWidth, float pHeight,ITextureRegion pTextureRegion,
 			VertexBufferObjectManager pSpriteVertexBufferObject, Context cont, String n) {
 		name = n;
@@ -92,6 +95,7 @@ public class ScrollBar {
 				return true;
 			}
 		};
+				
 		BaseActivity.mCurrentScene.registerTouchArea(scrollLetter);
 		BaseActivity.mCurrentScene.attachChild(scrollLetter);
 		scrollLetter.setHeight(pHeight);

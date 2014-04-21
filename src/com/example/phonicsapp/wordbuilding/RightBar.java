@@ -21,10 +21,11 @@ import com.example.phonicsapp.R;
 
 
 public class RightBar {
-	Sprite topPart,lowarPart,book ;
+	Sprite topPart,lowarPart,book,arrow ;
 	Rectangle rectAngle;
 	Parrot parrot;
 	ITextureRegion pCrossButton;
+	public static int bookPageCounter;
 	
 	public RightBar (TextureRegion pTextureRegion){
 		topPart = new Sprite(-333, -333, pTextureRegion, BaseActivity.vobm);
@@ -38,6 +39,11 @@ public class RightBar {
 		rectAngle.setAlpha(0.1f);
 		rectAngle.setColor(0.0f,0.0f,0.0f);
 		BaseActivity.mCurrentScene.attachChild(rectAngle);
+		
+		Rectangle rectAngle1 = new Rectangle(10,10, 130, BaseActivity.CAMERA_HEIGHT-20, BaseActivity.vobm);
+		rectAngle1.setAlpha(0.1f);
+		rectAngle1.setColor(0.0f,0.0f,0.0f);
+		BaseActivity.mCurrentScene.attachChild(rectAngle1);
 	}
 	public void createTopImage(ITextureRegion pTextureRegion){
 		topPart = new Sprite(10, 10, pTextureRegion, BaseActivity.vobm);
@@ -88,6 +94,28 @@ public class RightBar {
 		book.setWidth(BaseActivity.CAMERA_WIDTH +20);
 		book.setZIndex(500);
 		
+		arrow = new Sprite(BaseActivity.CAMERA_WIDTH - 70, BaseActivity.CAMERA_HEIGHT - 60, 60, 60, BaseActivity.OthersTextureReason.get(6), BaseActivity.vobm){
+			@Override
+			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent,final float pTouchAreaLocalX, final float pTouchAreaLocalY) {
+
+				switch (pSceneTouchEvent.getAction()){
+					case TouchEvent.ACTION_DOWN: {
+						//load next images 
+						bookPageCounter++;
+					}
+					case TouchEvent.ACTION_MOVE: {
+	
+					}
+					case TouchEvent.ACTION_UP: {
+						
+					//	popDownBook();
+					}
+				}
+ 
+				return false;
+
+			}
+		};
 		
 		
 		
@@ -98,6 +126,7 @@ public class RightBar {
 		BaseActivity.rightFlipImage.popDownFlipBook();
 		if(!book.hasParent()){
 			BaseActivity.mCurrentScene.attachChild(book);
+			book.attachChild(arrow);
 			book.setPosition(BaseActivity.CAMERA_WIDTH + 10 ,BaseActivity.CAMERA_HEIGHT +10);
 			//book.registerEntityModifier(new ScaleModifier(0.4f, 0, 1));
 			book.registerEntityModifier(new ParallelEntityModifier(new ScaleModifier(0.3f, 0, 1), new MoveModifier(0.3f, BaseActivity.CAMERA_WIDTH -80, -10, BaseActivity.CAMERA_HEIGHT-80, -10)));
@@ -175,17 +204,17 @@ public class RightBar {
 		}
 		return 1;
 	}
-	/*ArrayList<Integer> bookPicAliveList(){
+	ArrayList<Integer> bookPicAliveList(){
 		BaseActivity.bookPicAliveList.add(false);	
 		
 		return null;
 		
-	}*/
+	}
 	void mouldAddingAnimationToBook(Mouled m){
 		Mouled tempMpoldMouled = new Mouled(m.mouled.getX(),m.mouled.getY(),m.mouled.getWidth(),m.mouled.getHeight(),m.mouled.getTextureRegion(),m.mouled.getTextureRegion(),BaseActivity.vobm,BaseActivity.context,1);
 		BaseActivity.rightFlipImage.flipBook.attachChild(tempMpoldMouled.mouled);
 		tempMpoldMouled.mouled.setHeight(200);
-		ScaleModifier sm = new ScaleModifier(0.5f , 1, 0.4f);
+		ScaleModifier sm = new ScaleModifier(0.5f , 1, 0.4f); 
 		MoveModifier mf = new MoveModifier(0.3f, tempMpoldMouled.mouled.getX(), tempMpoldMouled.mouled.getX() + 20, tempMpoldMouled.mouled.getY(), tempMpoldMouled.mouled.getY() + 150);
 		FadeOutModifier fo = new FadeOutModifier(1.2f);
 		tempMpoldMouled.mouled.registerEntityModifier(sm);
